@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @property --boxShadowColor {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
+	syntax: "<color>";
+	inherits: false;
+	initial-value: transparent;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -18,9 +20,16 @@ html {
 
 :root {
 	--light-white: #E4E5EA;
+	interpolate-size: allow-keywords;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	margin: 0;
 }
 
@@ -92,8 +101,8 @@ img {
 	max-width: 350px;
 	width: 100%;
 	width: 100%;
-	
-} 
+
+}
 
 
 .list-item {
@@ -104,13 +113,13 @@ img {
 
 .orange-text {
 	background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);
-  /* Говорим, что мы будем обрезать фон по форме текста */
-  -webkit-background-clip: text;
-  /* В некоторых браузерах нужна поддержка префикса -webkit */
-  -webkit-text-fill-color: transparent;
-  /* Для более широкой поддержки */
-  background-clip: text;
-  color: transparent;
+	/* Говорим, что мы будем обрезать фон по форме текста */
+	-webkit-background-clip: text;
+	/* В некоторых браузерах нужна поддержка префикса -webkit */
+	-webkit-text-fill-color: transparent;
+	/* Для более широкой поддержки */
+	background-clip: text;
+	color: transparent;
 	font-weight: 700;
 }
 
@@ -130,8 +139,16 @@ img {
 	transition-property: color, background-color, var(--boxShadowColor);
 }
 
+.btn_reset {
+	box-shadow: none;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
 
-.btn_blue, .btn_active.btn_active {
+
+.btn_blue,
+.btn_active.btn_active {
 	background-color: rgb(64, 119, 243);
 }
 
@@ -186,41 +203,54 @@ input:focus {
 .button-play-wrapper {
 	width: 35px;
 	height: 35px;
-	position: relative; /* Позиционируем контейнер */
+	position: relative;
+	/* Позиционируем контейнер */
 }
 
 .button-play {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 }
 
 .button-play-wrapper::before {
-	transform: scale(3); /* Увеличит иконку */
+	transform: scale(3);
+	/* Увеличит иконку */
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(./src/assets/play-blue.svg); /* Вторая картинка */
-	background-size: contain; /* Изображение полностью помещается в область */
-	background-position: center; /* Центрируем изображение */
-	background-repeat: no-repeat; /* Запрещаем повторение */
-	opacity: 0; /* Скрыта по умолчанию */
-	transition: opacity 0.3s ease; /* Плавное появление */
-	z-index: 2; /* Добавлено */
+	background-image: url(./src/assets/play-blue.svg);
+	/* Вторая картинка */
+	background-size: contain;
+	/* Изображение полностью помещается в область */
+	background-position: center;
+	/* Центрируем изображение */
+	background-repeat: no-repeat;
+	/* Запрещаем повторение */
+	opacity: 0;
+	/* Скрыта по умолчанию */
+	transition: opacity 0.3s ease;
+	/* Плавное появление */
+	z-index: 2;
+	/* Добавлено */
 }
 
 .button-play-wrapper:hover::before {
-	opacity: 1; /* Показываем вторую картинку */
+	opacity: 1;
+	/* Показываем вторую картинку */
 	width: 100%;
 	height: 100%;
 }
 
 .button-play-wrapper:hover .button-play {
-	opacity: 0; /* Скрываем первую картинку */
+	opacity: 0;
+	/* Скрываем первую картинку */
 	width: 100%;
 	height: 100%;
 }
@@ -280,7 +310,7 @@ input:focus {
 	justify-content: center;
 }
 
-.header__nav-link link{
+.header__nav-link link {
 	text-decoration: none;
 	color: inherit;
 	font-size: inherit;
@@ -291,7 +321,7 @@ input:focus {
 	color: inherit;
 	text-decoration: none;
 	font-size: inherit;
-	
+
 }
 
 .header__contacts_img_wrapper {
@@ -308,16 +338,20 @@ input:focus {
 	width: 20px;
 	height: 20px;
 	position: relative;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 
 }
 
 .telegram-logo {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 }
 
 .telegram-logo-wrapper::before {
@@ -327,34 +361,43 @@ input:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(./src/assets/telegram-blue.svg); /* Вторая картинка */
+	background-image: url(./src/assets/telegram-blue.svg);
+	/* Вторая картинка */
 	background-size: cover;
-	opacity: 0; /* Скрыта по умолчанию */
-	transition: opacity 0.3s ease; /* Плавное появление */
+	opacity: 0;
+	/* Скрыта по умолчанию */
+	transition: opacity 0.3s ease;
+	/* Плавное появление */
 }
 
 .telegram-logo-wrapper:hover::before {
-	opacity: 1; /* Показываем вторую картинку */
+	opacity: 1;
+	/* Показываем вторую картинку */
 }
 
 .telegram-logo-wrapper:hover .telegram-logo {
-	opacity: 0; /* Скрываем первую картинку */
+	opacity: 0;
+	/* Скрываем первую картинку */
 }
 
 .phone-logo-wrapper {
 	width: 20px;
 	height: 20px;
 	position: relative;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 
 }
 
 .phone-logo {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 }
 
 .phone-logo-wrapper::before {
@@ -364,34 +407,43 @@ input:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(./src/assets/phone-blue.svg); /* Вторая картинка */
+	background-image: url(./src/assets/phone-blue.svg);
+	/* Вторая картинка */
 	background-size: cover;
-	opacity: 0; /* Скрыта по умолчанию */
-	transition: opacity 0.3s ease; /* Плавное появление */
+	opacity: 0;
+	/* Скрыта по умолчанию */
+	transition: opacity 0.3s ease;
+	/* Плавное появление */
 }
 
 .phone-logo-wrapper:hover::before {
-	opacity: 1; /* Показываем вторую картинку */
+	opacity: 1;
+	/* Показываем вторую картинку */
 }
 
 .phone-logo-wrapper:hover .phone-logo {
-	opacity: 0; /* Скрываем первую картинку */
+	opacity: 0;
+	/* Скрываем первую картинку */
 }
 
 .whatsApp-logo-wrapper {
 	width: 20px;
 	height: 20px;
 	position: relative;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 
 }
 
 .whatsApp-logo {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Сохраняет пропорции изображения */
-	transition: opacity 0.3s ease; /* Плавное исчезновение */
+	object-fit: cover;
+	/* Сохраняет пропорции изображения */
+	transition: opacity 0.3s ease;
+	/* Плавное исчезновение */
 }
 
 .whatsApp-logo-wrapper::before {
@@ -401,19 +453,25 @@ input:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(./src/assets/whatsApp-blue.svg); /* Вторая картинка */
+	background-image: url(./src/assets/whatsApp-blue.svg);
+	/* Вторая картинка */
 	background-size: cover;
-	opacity: 0; /* Скрыта по умолчанию */
-	transition: opacity 0.3s ease; /* Плавное появление */
+	opacity: 0;
+	/* Скрыта по умолчанию */
+	transition: opacity 0.3s ease;
+	/* Плавное появление */
 }
 
 .whatsApp-logo-wrapper:hover::before {
-	opacity: 1; /* Показываем вторую картинку */
+	opacity: 1;
+	/* Показываем вторую картинку */
 }
 
 .whatsApp-logo-wrapper:hover .whatsApp-logo {
-	opacity: 0; /* Скрываем первую картинку */
+	opacity: 0;
+	/* Скрываем первую картинку */
 }
+
 /* .header */
 
 /* .intro */
@@ -571,6 +629,7 @@ input:focus {
 	max-width: 280px;
 	max-height: 345px;
 }
+
 /* .video */
 
 
@@ -596,9 +655,10 @@ input:focus {
 
 }
 
-.aboutUs__list-title{
+.aboutUs__list-title {
 	font-size: 3rem;
 }
+
 .aboutUs__list-description {
 	max-width: 225px;
 	font-size: 1.125rem;
@@ -669,40 +729,40 @@ input:focus {
 	text-transform: lowercase;
 }
 
-	.problems__audit-logo-and-description {
-		display: flex;
-		padding: 40px 0;
-		gap: 90px;
-		flex-wrap: wrap;
-	}
+.problems__audit-logo-and-description {
+	display: flex;
+	padding: 40px 0;
+	gap: 90px;
+	flex-wrap: wrap;
+}
 
-	.problems__audit-item {
-		max-width: 310px;
-	}
+.problems__audit-item {
+	max-width: 310px;
+}
 
-	.problems__audit-logo {
-		height: 70px;
-		width: 70px;
-		
-	}
+.problems__audit-logo {
+	height: 70px;
+	width: 70px;
 
-	.problems__audit-item-title {
-		font-size: 1.125rem;
-		padding: 20px 0;
-	
-	}
+}
 
-	.problems__audit-item-description {
-		font-family: "Montserrat", serif;
-		line-height: 1.5;
-	}
+.problems__audit-item-title {
+	font-size: 1.125rem;
+	padding: 20px 0;
 
-	.audit__link {
-		max-width: 262px;
-		width: 100%;
-		padding: 20px 68px;
+}
 
-	}
+.problems__audit-item-description {
+	font-family: "Montserrat", serif;
+	line-height: 1.5;
+}
+
+.audit__link {
+	max-width: 262px;
+	width: 100%;
+	padding: 20px 68px;
+
+}
 
 /* .problems*/
 
@@ -768,7 +828,8 @@ input:focus {
 
 .price__left-and-right {
 	display: flex;
-	justify-content: space-between; /* Распределение пространства между элементами */
+	justify-content: space-between;
+	/* Распределение пространства между элементами */
 	gap: 20px;
 }
 
@@ -865,11 +926,11 @@ input:focus {
 	gap: 10px;
 }
 
-.price__radio:checked + .price__questions-link {
+.price__radio:checked+.price__questions-link {
 	background-color: rgb(64, 119, 243);
 }
 
-.price__radio:checked + .price__questions-link_big {
+.price__radio:checked+.price__questions-link_big {
 	background-color: rgb(64, 119, 243);
 }
 
@@ -877,28 +938,33 @@ input:focus {
 	display: none;
 }
 
-.dialog-content {
+.price-dialog__content {
 	padding: 70px 100px;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 }
 
-.price-dialog-title {
-	font-size: 1.5rem;
-}
-
 .price-dialog {
 	border: 1px solid #25262C;
 	background-color: black;
+	color: inherit;
 }
 
-.price-dialog-description {
-	color: var(--light-white);
+.price-dialog__output {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
-.price-dialog-img:hover {
-	cursor: pointer;
+.price-dialog-img {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
+
+.price-dialog__form-close {
+	height: 0;
 }
 
 /* .price__questions_link:hover {
@@ -944,9 +1010,9 @@ input:focus {
 
 .services__list {
 	display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  gap: 30px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	gap: 30px;
 	place-items: center;
 }
 
@@ -1060,7 +1126,8 @@ input:focus {
 	gap: 40px;
 	border: 1px solid #25262C;
 	justify-content: space-between;
-	min-width: 0;   /* Исправляет баг в flex-контексте */
+	min-width: 0;
+	/* Исправляет баг в flex-контексте */
 }
 
 
@@ -1082,7 +1149,7 @@ input:focus {
 
 
 .widgets__bottom-list-wrapper {
-	display: flex; 
+	display: flex;
 	flex-wrap: wrap;
 	gap: 40px;
 	max-width: 900px;
@@ -1129,19 +1196,11 @@ input:focus {
 	width: 100%;
 }
 
-.widgets__button-wrapper {
-	max-height: 61px;
-	max-width: 263px;
-	flex: 1 0 auto; /* Может сжиматься, но не растягиваться */
-
-}
-
 .widgets__link {
-	width: 100%;
-	height: 100%;
-	max-height: 61px;
 	max-width: 263px;
 	padding: 21px 28px;
+	display: block;
+	white-space: normal;
 }
 
 .widgets__right-item {
@@ -1221,8 +1280,8 @@ input:focus {
 
 .integrations__list-wrapper {
 	display: grid;
-  grid-template-columns: repeat(4, auto);
-  /* flex-template-rows: repeat(auto-fit); */
+	grid-template-columns: repeat(4, auto);
+	/* flex-template-rows: repeat(auto-fit); */
 	gap: 40px;
 	padding: 50px 0;
 }
@@ -1232,7 +1291,7 @@ input:focus {
 	display: flex;
 }
 
-.integrations__list-logo{
+.integrations__list-logo {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -1413,6 +1472,7 @@ input:focus {
 	max-height: 30px;
 	height: 100%;
 }
+
 /* .intergrations*/
 
 
@@ -1498,6 +1558,7 @@ input:focus {
 	max-width: 283px;
 	width: 100%;
 	padding: 20px 15px;
+	white-space: normal;
 }
 
 
@@ -1596,7 +1657,7 @@ input:focus {
 }
 
 .solutions__list-description:has(:not(.solutions__list-item_second, .solutions__list-item_third)) {
-	max-width: 175px;	
+	max-width: 175px;
 }
 
 .solutions__list-item-midle-wrapper {
@@ -1690,10 +1751,10 @@ input:focus {
 	align-items: center;
 	justify-content: center;
 	border: 1px solid #25262C;
-  max-width: 195px;
+	max-width: 195px;
 	width: 100%;
 	max-height: 105px;
-	height: 100%; 
+	height: 100%;
 	padding: 20px 10px;
 	background: linear-gradient(162.2deg, rgba(255, 246, 233, 0.1) -1.42%, rgba(26, 29, 35, 0.1) 25.01%, rgba(26, 29, 35, 0.1) 50.31%, rgba(26, 29, 35, 0.2) 75.65%, rgba(26, 29, 35, 0.2) 97.87%);
 }
@@ -1778,7 +1839,8 @@ input:focus {
 
 .blog__video-right {
 	display: grid;
-	grid-template-columns: repeat(2, auto); /* 2 столбца с равной шириной */
+	grid-template-columns: repeat(2, auto);
+	/* 2 столбца с равной шириной */
 	gap: 20px;
 	height: 100%;
 	max-height: 258px;
@@ -1910,7 +1972,7 @@ input:focus {
 
 .access__left-and-right {
 	display: flex;
-	gap: 80px;	
+	gap: 80px;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
@@ -1924,7 +1986,7 @@ input:focus {
 
 .access__link {
 	max-width: 262px;
-	width: 100%;	
+	width: 100%;
 	padding: 20px 59px;
 }
 
@@ -1963,7 +2025,7 @@ input:focus {
 
 .footer__list-middle {
 	display: flex;
-	flex-wrap: wrap;	
+	flex-wrap: wrap;
 }
 
 .footer__list-middle {
@@ -2001,8 +2063,8 @@ input:focus {
 }
 
 .footer__contacts-logo {
-	width: 100%;	
-	height: 100%;	
+	width: 100%;
+	height: 100%;
 }
 
 .footer__contacts-logo-wrapper {
@@ -2018,12 +2080,9 @@ input:focus {
 
 /* .footer*/
 
-
-
-
-
-
-
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.8);
+}
 
 @media (max-width: 800px) {
 	html {
@@ -2072,13 +2131,15 @@ input:focus {
 	}
 
 	.solutions__list {
-		grid-template-columns: 1fr; /* Один столбец */
-		grid-template-rows: auto; /* Автоматическая высота строк */
+		grid-template-columns: 1fr;
+		/* Один столбец */
+		grid-template-rows: auto;
+		/* Автоматическая высота строк */
 		grid-template-areas:
-            "first"
-            "second"
-            "third"
-            "forth";
+			"first"
+			"second"
+			"third"
+			"forth";
 		justify-content: center;
 	}
 
@@ -2132,7 +2193,3 @@ input:focus {
 		align-items: center;
 	}
 }
-
-
-
-	
